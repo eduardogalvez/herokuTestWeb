@@ -36,7 +36,10 @@ $scope.addItem = function(itemList, item) {
     $http.get("https://www.googleapis.com/books/v1/volumes?q=isbn:" + item).success(function(data) {
       itemList.push("Title: " + data.items[0].volumeInfo.title + " // Author(s):" + data.items[0].volumeInfo.authors)
     })
-  } 
+  } else {
+    console.log("Not an ISBN")
+    itemList.push(item);
+  }
 }
 
 
