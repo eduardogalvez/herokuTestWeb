@@ -14,9 +14,10 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
     }
 
 
+    var SpotifyWebApi = require('spotify-web-api-node');
 
-    
-  	
+    var spotifyApi = new SpotifyWebApi();
+
     $scope.addItem = function(itemList, item) {
       // ISBN : 10 or 13 length and consisdt of only numbers
       if ((item.length == 10 || item.length == 13) && hasOnlyNumbers(item)) {
@@ -26,7 +27,20 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
         })
       } else {
         console.log("Not an ISBN")
-        itemList.push(item);
+       // itemList.push(item);
+        
+        spotifyApi.getUserPlaylists(item)
+  .then(function(data) {
+    console.log('Retrieved playlists', data.body);
+  },function(err) {
+    console.log('Something went wrong!', err);
+  });
+
+  itemList.push(data.body);
+
+
+
+
       }
     }
 
