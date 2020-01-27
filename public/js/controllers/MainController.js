@@ -18,8 +18,7 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 
     var spotifyApi = new SpotifyWebApi();
 
-    var holder;
-
+    
     // Get a user's playlists
     /*
 spotifyApi.getUserPlaylists( item)
@@ -33,11 +32,7 @@ spotifyApi.getUserPlaylists( item)
 
 
     $scope.addItem = function(itemList, item) {
-      var holder;
-
-      spotifyApi.getUserPlaylists(item).then(function(data){
-          holder = data.body.href;
-      },     itemList.push(holder)
+      itemList.push(item);
       
        
     }
