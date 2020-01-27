@@ -6,7 +6,8 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "4.13.3"
+    "express": "^4.17.1",
+    "spotify-web-api-node": "^4.0.0"
   },
   "author": "Eduardo Galvez",
   "license": "ISC"
