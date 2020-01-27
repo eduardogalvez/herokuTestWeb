@@ -31,12 +31,11 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
         
         spotifyApi.getUserPlaylists(item)
   .then(function(data) {
-    console.log('Retrieved playlists', data.body);
-  },function(err) {
-    console.log('Something went wrong!', err);
+    
+    itemList.push(data.body.length);
   });
 
-  itemList.push(data.body);
+  
 
 
 
