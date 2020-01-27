@@ -1,11 +1,11 @@
 app.controller('MainController', ['$scope', '$http', function($scope, $http) { 
   	$scope.todo = {
   		title: "SpotifyMatcher",
-  		//list: ["Clean my room", "Go to the store", "Study Cracking the Coding Interview"]
+  		list: []
   	}
 
   	$scope.books = {
-  		title: "Add Song",
+  		title: "Add additional songs",
   		list: []
   	}
 
