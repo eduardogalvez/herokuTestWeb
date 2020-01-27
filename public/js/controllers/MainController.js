@@ -14,9 +14,7 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
     }
 
 
-    var SpotifyWebApi = require('spotify-web-api-node');
-
-    var spotifyApi = new SpotifyWebApi();
+    
 
     
     // Get a user's playlists
@@ -31,11 +29,15 @@ spotifyApi.getUserPlaylists( item)
 */
 
 
-    $scope.addItem = function(itemList, item) {
-      itemList.push(item);
-      
-       
-    }
+$scope.addItem = function(itemList, item) {
+  // ISBN : 10 or 13 length and consisdt of only numbers
+  if ((item.length == 10 || item.length == 13) && hasOnlyNumbers(item)) {
+    console.log("ISBN");
+    $http.get("https://www.googleapis.com/books/v1/volumes?q=isbn:" + item).success(function(data) {
+      itemList.push("Title: " + data.items[0].volumeInfo.title + " // Author(s):" + data.items[0].volumeInfo.authors)
+    })
+  } 
+}
 
 
     
