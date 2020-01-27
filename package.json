@@ -1,5 +1,5 @@
 {
-  "name": "tutorial",
+  "name": "spotifymatcher",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -8,6 +8,6 @@
   "dependencies": {
     "express": "4.13.3"
   },
-  "author": "Kathryn Hodge",
+  "author": "Eduardo Galvez",
   "license": "ISC"
 }
