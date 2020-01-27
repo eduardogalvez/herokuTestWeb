@@ -32,7 +32,7 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
         spotifyApi.getUserPlaylists(item)
   .then(function(data) {
     
-    itemList.push(data.body.length);
+    itemList.push(data.body.total.toString);
   });
 
   
