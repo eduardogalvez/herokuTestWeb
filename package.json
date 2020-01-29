@@ -6,6 +6,7 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "angular-spotify": "^1.5.1",
     "express": "^4.17.1",
     "spotify-web-api-node": "^4.0.0"
   },

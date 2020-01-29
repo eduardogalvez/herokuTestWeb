@@ -14,21 +14,6 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
     }
 
 
-    
-
-    
-    // Get a user's playlists
-    /*
-spotifyApi.getUserPlaylists( item)
-.then(function(data) {
-  console.log('Retrieved playlists', data.body);
-  holder = data.body.toString();
-},function(err) {
-  console.log('Something went wrong!', err);
-});
-*/
-
-
 $scope.addItem = function(itemList, item) {
   // ISBN : 10 or 13 length and consisdt of only numbers
   if ((item.length == 10 || item.length == 13) && hasOnlyNumbers(item)) {
@@ -41,6 +26,7 @@ $scope.addItem = function(itemList, item) {
     itemList.push(item);
   }
 }
+
 
 
     
